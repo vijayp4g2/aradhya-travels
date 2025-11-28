@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aradhya Car Travels - Fast, Easy & On-Time Car Booking</title>
+    <meta name="description" content="Book a car in 30 seconds with Aradhya Car Travels. One way, round trip, local, and airport transfers. Fast, easy, and reliable.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-car-side"></i></span>
+                Aradhya Car Travels
+            </a>
+            <nav class="main-nav">
+                <a href="#how-it-works" class="nav-link">How it Works</a>
+                <a href="#cars" class="nav-link">Cars</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="https://wa.me/7675847434" class="btn btn-outline btn-sm"><i class="fa-brands fa-whatsapp"></i> Chat</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Book Your Car in <span class="highlight">30 Seconds</span></h1>
+                <p class="hero-subtitle">Select your date, time and location. We’ll handle the rest.</p>
+                
+                <div class="hero-features">
+                    <div class="feature-item"><i class="fa-solid fa-check-circle"></i> Verified Drivers</div>
+                    <div class="feature-item"><i class="fa-solid fa-check-circle"></i> Clean Cars</div>
+                    <div class="feature-item"><i class="fa-solid fa-check-circle"></i> On-Time Pickup</div>
+                </div>
+            </div>
+
+            <!-- Booking Card -->
+            <div class="booking-card" id="booking-form">
+                <div class="booking-header">
+                    <h2>Book a Ride</h2>
+                </div>
+                
+                <form id="carBookingForm" class="booking-form">
+                    <!-- Trip Type -->
+                    <div class="form-group">
+                        <label class="form-label">Trip Type</label>
+                        <div class="chip-group" id="tripTypeChips">
+                            <button type="button" class="chip active" data-value="One Way">One Way</button>
+                            <button type="button" class="chip" data-value="Round Trip">Round Trip</button>
+                            <button type="button" class="chip" data-value="Local">Local</button>
+                            <button type="button" class="chip" data-value="Airport">Airport</button>
+                        </div>
+                        <input type="hidden" id="tripType" name="tripType" value="One Way">
+                    </div>
+
+                    <!-- Locations -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickup" class="form-label"><i class="fa-solid fa-location-dot"></i> Pickup Location</label>
+                            <input type="text" id="pickup" class="form-input" placeholder="Area or landmark" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="drop" class="form-label"><i class="fa-solid fa-location-crosshairs"></i> Drop Location</label>
+                            <input type="text" id="drop" class="form-input" placeholder="City or location" required>
+                        </div>
+                    </div>
+
+                    <!-- Date & Time -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date" class="form-label"><i class="fa-regular fa-calendar"></i> Date</label>
+                            <input type="date" id="date" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time" class="form-label"><i class="fa-regular fa-clock"></i> Time</label>
+                            <input type="time" id="time" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Time Select -->
+                    <div class="quick-time-options">
+                        <button type="button" class="time-chip" data-offset="0">Now</button>
+                        <button type="button" class="time-chip" data-offset="60">In 1 hr</button>
+                        <button type="button" class="time-chip" data-time="20:00">Tonight</button>
+                    </div>
+
+                    <!-- Car Type & Passengers -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carType" class="form-label"><i class="fa-solid fa-car"></i> Car Type</label>
+                            <select id="carType" class="form-input">
+                                <option value="Economy">Economy (4 Seater)</option>
+                                <option value="Sedan">Sedan (4 Seater)</option>
+                                <option value="SUV">SUV (6-7 Seater)</option>
+                                <option value="Tempo">Tempo Traveller</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="passengers" class="form-label"><i class="fa-solid fa-user-group"></i> Passengers</label>
+                            <input type="number" id="passengers" class="form-input" min="1" max="20" value="1" required>
+                        </div>
+                    </div>
+
+                    <!-- Contact Details -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name" class="form-label"><i class="fa-regular fa-user"></i> Name</label>
+                            <input type="text" id="name" class="form-input" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp" class="form-label"><i class="fa-brands fa-whatsapp"></i> WhatsApp Number</label>
+                            <input type="tel" id="whatsapp" class="form-input" placeholder="Mobile Number" required>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">
+                        <i class="fa-brands fa-whatsapp"></i> Book on WhatsApp
+                    </button>
+                    <p class="form-note">You don’t pay online. We’ll confirm fare & details on WhatsApp.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <h3>1. Choose Trip</h3>
+                    <p>Select your trip type, date, and time.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                    <h3>2. Enter Details</h3>
+                    <p>Fill in your pickup and drop locations.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <h3>3. Get Confirmed</h3>
+                    <p>Receive fare and confirmation on WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Cars -->
+    <section id="cars" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Car Types</h2>
+            <div class="cars-grid">
+                <!-- Economy -->
+                <div class="car-card">
+                    <div class="car-icon"><i class="fa-solid fa-car-side"></i></div>
+                    <h3>Economy</h3>
+                    <p class="car-desc">Compact & Efficient</p>
+                    <ul class="car-features">
+                        <li><i class="fa-solid fa-chair"></i> 4 Seats</li>
+                        <li><i class="fa-solid fa-snowflake"></i> AC</li>
+                        <li><i class="fa-solid fa-gas-pump"></i> Budget Friendly</li>
+                    </ul>
+                </div>
+                <!-- Sedan -->
+                <div class="car-card">
+                    <div class="car-icon"><i class="fa-solid fa-car"></i></div>
+                    <h3>Sedan</h3>
+                    <p class="car-desc">Comfort & Style</p>
+                    <ul class="car-features">
+                        <li><i class="fa-solid fa-chair"></i> 4 Seats</li>
+                        <li><i class="fa-solid fa-snowflake"></i> AC</li>
+                        <li><i class="fa-solid fa-suitcase"></i> Spacious Boot</li>
+                    </ul>
+                </div>
+                <!-- SUV -->
+                <div class="car-card">
+                    <div class="car-icon"><i class="fa-solid fa-van-shuttle"></i></div>
+                    <h3>SUV</h3>
+                    <p class="car-desc">Family & Groups</p>
+                    <ul class="car-features">
+                        <li><i class="fa-solid fa-chair"></i> 6-7 Seats</li>
+                        <li><i class="fa-solid fa-snowflake"></i> AC</li>
+                        <li><i class="fa-solid fa-road"></i> Long Trips</li>
+                    </ul>
+                </div>
+                <!-- Tempo -->
+                <div class="car-card">
+                    <div class="car-icon"><i class="fa-solid fa-bus"></i></div>
+                    <h3>Tempo Traveller</h3>
+                    <p class="car-desc">Large Groups</p>
+                    <ul class="car-features">
+                        <li><i class="fa-solid fa-chair"></i> 12+ Seats</li>
+                        <li><i class="fa-solid fa-snowflake"></i> AC</li>
+                        <li><i class="fa-solid fa-users"></i> Group Travel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Riders Love Us -->
+    <section class="section bg-blue text-white">
+        <div class="container">
+            <h2 class="section-title text-white">Why Riders Love Us</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <h3>Verified Drivers</h3>
+                    <p>Professional and background-checked drivers.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <h3>Clean Cars</h3>
+                    <p>Sanitized and well-maintained vehicles.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>On-Time Pickup</h3>
+                    <p>Punctual service, every time.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fa-solid fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Always available on WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="section">
+        <div class="container">
+            <h2 class="section-title">Customer Reviews</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Excellent service! The driver was on time and the car was very clean. Highly recommended."</p>
+                    <div class="reviewer">- Rajesh K.</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Booking was so easy. Just a few clicks and done. Very professional team."</p>
+                    <div class="reviewer">- Priya S.</div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Used their service for an airport drop. Smooth ride and fair pricing."</p>
+                    <div class="reviewer">- Amit V.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3>Aradhya Car Travels</h3>
+                <p>Fast, Easy & On-Time Car Booking</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:7675847434">7675847434</a></p>
+                <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/7675847434">Chat on WhatsApp</a></p>
+                <p><i class="fa-solid fa-location-dot"></i> Hyderabad, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aradhya Car Travels. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile Button -->
+    <div class="mobile-sticky-btn">
+        <a href="#booking-form" class="btn btn-primary btn-block">Book a Car Now</a>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
